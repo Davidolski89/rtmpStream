@@ -16,4 +16,7 @@ Provides LiveChat functionality over WebSockets (SignalR library).
 [nginx compiled with rtmp module](https://github.com/sergey-dryabzhinsky/nginx-rtmp-module) (tested) [tutorial](https://docs.peer5.com/guides/setting-up-hls-live-streaming-server-using-nginx/)   
 [ffmpeg](https://www.ffmpeg.org/)
 
+## Mention
+Using [hls.js](https://github.com/video-dev/hls.js/) for browser playback.
+
 
