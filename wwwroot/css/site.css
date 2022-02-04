@@ -1,0 +1,160 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-color: #1e1c24;
+    margin: 0;
+    color: aliceblue;
+    font-style: normal;
+    font-family: Sans-serif;
+}
+#video{
+    width: 100%;
+    min-width: 400px;
+}
+#howTo {
+    color: #31259c;
+}
+    #howTo:hover {
+        cursor: pointer;
+        color: #3b2dc0;
+        color: #6958ff;
+    }
+
+
+#flexMe {
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+}
+#videoContainer{
+    flex:5;
+    align-content:center;
+}
+#chatContainer{
+    flex:1;
+    min-width: 200px;
+}
+
+#innerChat{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction :column;
+}
+#messageContainer{
+    flex: 6;
+    overflow: hidden;    
+}
+#controlls{
+    flex: 2;
+    margin-left: 3px;
+}
+
+#messagesList {
+    list-style-type: none;
+    overflow: hidden;
+}
+#messagesList li{
+    padding-left: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    
+}
+input {
+    background-color: #544b63;
+    color: aliceblue;
+    border-radius: 5px;
+    border: 2px solid;
+    border-color: #150234;
+    height: 20px;
+    font-size: 16px;
+    padding: 3px;
+}
+
+input:hover [type=text] {
+        -webkit-transition: 0.5s;
+        transition: 0.5s;
+        border-color: orangered;
+        border: 2px solid;
+}
+#textContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content:normal;
+}
+#sendButton {
+    background-color: blueviolet;
+    font-size: 18px;        
+    width: auto;
+    height: auto;
+}
+#messageInput{
+    flex: 5;   
+    height: auto;
+    max-width: 12em;
+}
+input:focus, select:focus, textarea:focus, button:focus {
+    outline: none;
+    border: 2px solid #4004A1;
+}
+
+video:focus{
+    outline: none;
+}
+
+#viewers {
+    color: orangered;
+}
+#userName{
+    width: 15em;
+}
+
+#streamSelectionContainer {
+    margin-top:5px;
+}
+#streamSelection {
+    min-width: 90px;
+    width: 11.8em;
+    background-color: #544b63;
+    border: 3px solid;
+    height: 2em;
+    font-size: 16px;
+    font: bold;
+    border-radius: 5px;
+    color: aliceblue;
+    border-color: #150234;
+}
+#streamSelection option {
+    color: aliceblue;
+}
+#hiddenContainer{
+    margin-top: 10px; 
+    margin-bottom: 5px;
+}
+#streamSelect{
+    width: 15em;
+}
+/*::placeholder {
+    color: whitesmoke;
+    opacity: 0.5;
+}*/
+::-webkit-input-placeholder { /* Edge */
+    color: whitesmoke;
+    opacity: 0.5;
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: whitesmoke;
+    opacity: 0.5;
+}
+@media screen and (max-width: 900px) {
+    #flexMe {
+        flex-direction: column;
+        align-items: center;
+    }
+}

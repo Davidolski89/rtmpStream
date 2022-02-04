@@ -1,0 +1,45 @@
+<head></head>
+<body>
+<script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+<video id="video"
+	width="1280"
+	height="720"
+	type='application/vnd.apple.mpegurl'
+	autoplay
+	controls
+>
+</video>
+<script>
+  var video = document.getElementById('video');
+  var videoSrc = 'http://gurk-network.ddnss.de:8080/hls/test.m3u8';
+  if (Hls.isSupported()) {
+	console.log("hls is supported");
+    var hls = new Hls();
+    hls.loadSource(videoSrc);
+    hls.attachMedia(video);
+    hls.on(Hls.Events.MANIFEST_PARSED,playVideo);
+  }
+else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+    video.src = videoSrc;
+	console.log("hls is played in nativ player");
+	video.play();
+  }
+</script>
+<!--<script>
+  var video = document.getElementById('video');
+  var videoSrc = 'http://gurk-network.ddnss.de:8080/hls/test.m3u8';
+  //
+  // First check for native browser HLS support
+  //
+  if (video.canPlayType('application/vnd.apple.mpegurl')) {
+    video.src = videoSrc;
+    //
+    // If no native HLS support, check if hls.js is supported
+    //
+  } else if (Hls.isSupported()) {
+    var hls = new Hls();
+    hls.loadSource(videoSrc);
+    hls.attachMedia(video);
+  }
+</script>-->
+</body>

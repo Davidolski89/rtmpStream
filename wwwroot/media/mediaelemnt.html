@@ -1,0 +1,25 @@
+<head>
+	<link rel="stylesheet" href="mediaelement/build/mediaelementplayer.min.css" />
+</head>
+<body>
+<script src="mediaelement/build/mediaelement-and-player.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.js"></script>
+<video id="player" class="mejs__player" width="1280" height="720">
+	<source type="application/x-mpegURL" src="http://gurk-network.ddnss.de:8080/hls/test.m3u8" />
+</video>
+<script>
+	// You can use either a string for the player ID (i.e., `player`), 
+	// or `document.querySelector()` for any selector
+	var player = new MediaElement('player', {
+		pluginPath: "",
+		success: function(mediaElement, originalNode) {
+
+		}
+	});
+	player.play();
+</script>
+
+
+
+
+</body>

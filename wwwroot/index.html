@@ -1,0 +1,74 @@
+<head></head>
+<body>
+<video id="video"
+	width="1280"
+	height="720"
+	controls
+	poster="901507.jpg"
+>
+</video>
+<div class="messageContainer">
+        <ul id="messagesList"></ul>
+    </div>
+    <div class="controlls">
+	<input type="button" id="sendButton" value="Send Message" />
+        <input type="text" id="messageInput" />   
+    </div>
+   <div>
+	Viewers: <span id="viewers"></span>
+</div>
+
+<audio id="mplayer">
+<source  src="aboutyou.opus" type="audio/ogg" />
+</audio>
+<script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+
+<script>
+  var video = document.getElementById('video');
+  var videoSrc = 'http://gurk-network.ddnss.de:8080/hls/live.m3u8';
+  video.type = 'application/vnd.apple.mpegurl';
+  video.src = videoSrc;
+
+    var hls = new Hls();
+    hls.attachMedia(video);
+    hls.on(Hls.Events.MEDIA_ATTACHED, function () {
+      hls.loadSource('http://gurk-network.ddnss.de:8080/hls/live.m3u8');
+      hls.on(Hls.Events.MANIFEST_PARSED, function (event, data) {
+        video.muted = true;        
+	video.play();
+      });
+   });
+<!--	hls.once(Hls.Events.ERROR, function (event,data){-->
+<!--	var errorType = data.type;-->		
+<!--	video.src = "anime1.webm";-->
+<!--	video.type = "video/webm";-->
+<!--	video.autoplay = true; -->
+<!--});-->
+</script>
+<!--<script>
+vplayer = document.getElementById("video");
+mplayer = document.getElementById("mplayer");
+mplayer.volume = 0.25;
+vplayer.muted = 'muted';
+vplayer.play(); 
+video.addEventListener('playing', (event) => {
+  mplayer.pause();
+});
+video.addEventListener('pause', (event) => {
+  mplayer.play();
+});
+video.addEventListener('suspend', (event) => {
+  mplayer.play();
+});
+video.addEventListener('waiting', (event) => {
+  mplayer.play();
+});
+video.addEventListener('loadstart', (event) => {
+  mplayer.play();
+});
+
+
+</script>-->
+<script src="http://gurk-network.ddnss.de/js/signalr/dist/browser/signalr.js"></script>
+<script src="http://gurk-network.ddnss.de/js/chat.js"></script>
+</body>

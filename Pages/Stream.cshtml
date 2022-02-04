@@ -1,0 +1,48 @@
+﻿@page
+<div id="flexMe">
+    <div id="videoContainer">
+        <video id="video"
+               controls
+               poster="media/901507.jpg">
+        </video>
+    </div>
+
+    <div id="chatContainer">
+        <div id="innerChat">
+            <div id="messageContainer">
+                <ul id="messagesList"></ul>
+            </div>
+            <div id="controlls">
+                <div id="textContainer">
+                    <input type="button" id="sendButton" value="Chat" />
+                    <input type="text" id="messageInput" />
+                </div>
+
+                <div>
+                    On: <span id="viewers"></span>
+                </div>
+
+                <div class="container">
+                    <p>Your Name:</p>
+                    <input type="text" id="userName" placeholder="required" />
+                </div>
+
+                <div id="streamSelectionContainer">
+                    <span>Stream: </span>
+                    <select id="streamSelection"></select>
+                </div>
+                <div id="hiddenContainer">
+                    <div>
+                        <img id="howToImg" src="/media/howto.jpg" style="display:none;"/>
+                        <span>Private:</span>   <span id="howTo">E.g. OBS Studio settings</span>
+                    </div>
+                    
+                    <input id="streamSelect" type="text" placeholder="E.g. StreamName_hidden" />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="~/js/signalr/dist/browser/signalr.js"></script>
+<script src="~/js/chat.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
